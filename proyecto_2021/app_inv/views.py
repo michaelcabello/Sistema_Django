@@ -22,6 +22,8 @@ class CategoriaView(LoginRequiredMixin, generic.ListView):
 
     login_url = 'bases:login'
 
+
+
 class CategoriaNew(LoginRequiredMixin, generic.CreateView):
 
     model = Categoria
