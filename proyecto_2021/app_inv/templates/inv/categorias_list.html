@@ -26,7 +26,7 @@
     <!-- Card Body -->
     <div class="card-body">
 
-        {% if not obji %}
+        {% if not obj %}
 
             No hay Categorías
 
@@ -44,7 +44,7 @@
        
 
             <tbody>
-                {% for item in obji %}
+                {% for item in obj %}
                     <tr>
                         <td>{{ item.id }}</td>
                         <td>{{ item.descripcion }}</td>
@@ -52,7 +52,7 @@
                         <td>{{ item.fc|date:"d/m/Y H:i:s" }}</td>
                         <td>{{ item.fm }}</td>
                         <td>
-                            <a href="" class="btn btn-warning btn-circle" role="button">
+                            <a href="{% url 'inv:categoria_edit' item.id %}" class="btn btn-warning btn-circle" role="button">
                                 <i class="far fa-edit"></i>
                             </a>
 

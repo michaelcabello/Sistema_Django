@@ -18,11 +18,9 @@ class CategoriaView(LoginRequiredMixin, generic.ListView):
 
     template_name = "inv/categorias_list.html"
 
-    context_object_name = "obji"
+    context_object_name = "obj"
 
     login_url = 'bases:login'
-
-
 
 class CategoriaNew(LoginRequiredMixin, generic.CreateView):
 
@@ -41,5 +39,25 @@ class CategoriaNew(LoginRequiredMixin, generic.CreateView):
     def form_valid(self, form):
 
         form.instance.uc = self.request.user
+
+        return super().form_valid(form)
+
+class CategoriaEdit(LoginRequiredMixin, generic.UpdateView):
+
+    model = Categoria
+
+    template_name = 'inv/categorias_form.html'
+
+    context_object_name = "obj"
+
+    form_class = CategoriaForm
+
+    success_url = reverse_lazy("inv:categoria_list")
+
+    login_url = 'bases:login'
+
+    def form_valid(self, form):
+
+        form.instance.um = self.request.user.id
 
         return super().form_valid(form)
