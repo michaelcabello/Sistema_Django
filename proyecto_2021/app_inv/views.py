@@ -61,3 +61,13 @@ class CategoriaEdit(LoginRequiredMixin, generic.UpdateView):
         form.instance.um = self.request.user.id
 
         return super().form_valid(form)
+
+class CategoriaDel(LoginRequiredMixin, generic.DeleteView):
+
+    model = Categoria
+
+    template_name = 'inv/catalogos_del.html'
+
+    context_object_name = 'name'
+
+    success_url = reverse_lazy("inv:categoria_list")
