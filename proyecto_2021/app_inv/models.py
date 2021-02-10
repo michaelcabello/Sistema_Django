@@ -10,7 +10,7 @@ class Categoria(ClaseModelo):
         
         max_length=100,
 
-        help_text = 'Descripción de la Categoría',
+        help_text = 'Descripción del maiki',
 
         unique = True
 
