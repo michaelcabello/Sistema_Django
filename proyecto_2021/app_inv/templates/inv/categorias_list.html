@@ -42,7 +42,6 @@
                 <th class="all">Acciones</th>
             </thead>
        
-
             <tbody>
                 {% for item in obj %}
                     <tr>
@@ -50,7 +49,7 @@
                         <td>{{ item.descripcion }}</td>
                         <td>{% if item.estado %} Activado {% else %} Desactivado {% endif %}</td>
                         <td>{{ item.fc|date:"d/m/Y H:i:s" }}</td>
-                        <td>{{ item.fm }}</td>
+                        <td>{{ item.fm|date:"d/m/Y H:i:s" }}</td>
                         <td>
                             <a href="{% url 'inv:categoria_edit' item.id %}" class="btn btn-warning btn-circle" role="button">
                                 <i class="far fa-edit"></i>
@@ -75,6 +74,12 @@
 
 {% block js_page %}
 
+<script>
 
+$(document).ready( function () {
+    $('.table').DataTable();
+} );
+
+</script>
 
 {% endblock %}

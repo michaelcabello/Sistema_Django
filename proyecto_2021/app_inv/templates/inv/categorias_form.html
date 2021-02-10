@@ -8,7 +8,7 @@
 
         {% if obj %}
         
-            <div class="card border-left-warning shadow h-100 py-2"></div>
+            <div class="card border-left-warning shadow h-100 py-2">
         
         {% else %}
 
@@ -37,8 +37,12 @@
                             <div class="input-group">
                                 <label for="id_estado">Estado</label>
                                 <input type="checkbox" name="estado" class="form-control" id = "id_estado"
-                                value="
-                                {% if obj.estado %} checked {% endif %}">
+                                {% if obj %}
+                                    {% if obj.estado %} checked {% endif %}
+                                {% else %}
+                                    checked
+                                {% endif %}
+                                >
                             </div>
                         </div>
 

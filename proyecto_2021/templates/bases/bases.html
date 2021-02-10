@@ -22,7 +22,7 @@
     <!-- Custom styles for this template-->
     <link href="{% static 'bases/css/sb-admin-2.min.css' %}" rel="stylesheet">
 
-    <link href="{% static 'bases/css/derecha.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'bases/vendor/datatables/dataTables.bootstrap4.min.css' %}">
 
 </head>
 
@@ -405,8 +405,12 @@
     <!-- Custom scripts for all pages-->
     <script src="{% static 'bases/js/sb-admin-2.min.js' %}"></script>
 
+    <script src="{% static 'bases/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+
+    <script src="{% static 'bases/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+
 </body>
 
-    {% block js_page %} {% endblock %}
+    {% block js_page %}{% endblock %}
 
 </html>
