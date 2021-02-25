@@ -1,4 +1,4 @@
-  {% extends 'bases/bases.html' %}
+{% extends 'bases/bases.html' %}
 
 {% block page_content %}
 
@@ -17,7 +17,7 @@
             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                 aria-labelledby="dropdownMenuLink">
                 <div class="dropdown-header">Acciones:</div>
-                <a class="dropdown-item" href="{% url 'inv:categoria_new' %}">Nueva sub categoría</a>
+                <a class="dropdown-item" href="{% url 'inv:subcategoria_new' %}">Nueva sub categoría</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Salir</a>
             </div>
@@ -53,11 +53,11 @@
                         <td>{{ item.fc|date:"d/m/Y H:i:s" }}</td>
                         <td>{{ item.fm|date:"d/m/Y H:i:s" }}</td>
                         <td>
-                            <a href="" class="btn btn-warning btn-circle" role="button">
+                            <a href="{% url 'inv:subcategoria_edit' item.id %}" class="btn btn-warning btn-circle" role="button">
                                 <i class="far fa-edit"></i>
                             </a>
 
-                            <a href="" class="btn btn-danger btn-circle" role="button">
+                            <a href="{% url 'inv:subcategoria_del' item.id %}" class="btn btn-danger btn-circle" role="button">
                                 <i class="far fa-trash-alt"></i>
                             </a>
 
@@ -76,12 +76,12 @@
 
 {% block js_page %}
 
-<script>
+    <script>
 
-$(document).ready( function () {
-    $('.table').DataTable();
-} );
+        $(document).ready( function () {
+            $('.table').DataTable();
+        } );
 
-</script>
+    </script>
 
 {% endblock %}

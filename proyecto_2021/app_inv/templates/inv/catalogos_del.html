@@ -19,7 +19,7 @@
                                 Sí, eliminar
                             </button>
 
-                            <a href="{% url 'inv:categoria_list' %}" class="btn btn-success">
+                            <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-success">
                                 <span class="fa fa-undo"></span>
                                 Cancelar
                             </a>

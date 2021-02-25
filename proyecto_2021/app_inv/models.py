@@ -19,7 +19,7 @@ class Categoria(ClaseModelo):
     def __str__(self):
         return f'{self.descripcion}'
 
-    # Falta comprender
+    # Cuando hacen referencia a la categoria va mostrar la descripcion de la categoria
 
     def save(self):
         self.descripcion = self.descripcion.upper()
@@ -42,7 +42,9 @@ class SubCategoria(ClaseModelo):
 
     def __str__(self):
 
-        return '{}:{}'.format(self.categoria.descripcion,self.descripcion)
+        return '{}:{}'.format(self.categoria.descripcion, self.descripcion)
+        #cuando hacen referencia a subcategoria va mostrar la descripcion de la categoria y la descripcion de la subcategoria
+        #   pantalones:pantalones para niños
 
     def save(self):
         self.descripcion = self.descripcion.upper()
